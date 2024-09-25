@@ -6,7 +6,7 @@ from my_app.models import Author, Genre, Book, Borrow
 # Create your views here.
 def index(request):
     context = {
-        "render_string": "Hello, world!"
+        "render_string": "1Hello, world!"
     }
     return render(request, "index.html", context)
 
@@ -20,7 +20,7 @@ def author_list(request):
 
 # Список жанрів та форма для додавання нового жанру
 def genre_list(request):
-    genres = Genre.objects.all()
+
 
     # Якщо запит POST, обробляємо дані форми
     if request.method == 'POST':
@@ -32,6 +32,7 @@ def genre_list(request):
             Genre.objects.create(name=name, description=description)
             return redirect('genre_list')  # Переходимо на ту ж саму сторінку після додавання
 
+    genres = Genre.objects.all()
     context = {
         'genres': genres
     }
