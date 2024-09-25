@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow List</title>
+</head>
+<body>
+    <h1>Borrows</h1>
+    <ul>
+        {% for borrow in borrows %}
+        <li>{{ borrow.user.username }} borrowed "{{ borrow.book.title }}" on {{ borrow.borrow_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
