@@ -1,3 +1,5 @@
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404, redirect
 
 from my_app.models import Author, Genre, Book, Borrow
@@ -63,3 +65,6 @@ def book_detail(request, pk):
         'book': book
     }
     return render(request, 'book_detail.html', context)
+
+
+
